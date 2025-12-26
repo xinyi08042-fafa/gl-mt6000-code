@@ -9,7 +9,7 @@ PKG_LICENSE:=MIT
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/mt6000_settings
+define Package/aaa_modules
   SECTION:=utils
   CATEGORY:=Utilities
   TITLE:=MT6000 reset Settings
@@ -24,7 +24,7 @@ endef
 define Build/Compile
 endef
 
-define Package/mt6000_settings/install
+define Package/aaa_modules/install
 	$(INSTALL_DIR) $(1)/etc/init.d
         $(INSTALL_BIN) ./files/mt6000-settings.sh $(1)/etc/init.d/mt6000_settings
 endef
