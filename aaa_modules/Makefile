@@ -31,4 +31,3 @@ define Package/aaa_modules/install
 endef
 
 $(eval $(call BuildPackage,aaa_modules))
-EOF
