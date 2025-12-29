@@ -1,8 +1,9 @@
+cat > Makefile << 'EOF'
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=aaa_modules
 PKG_VERSION:=1.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PKG_MAINTAINER:=xinyi08042-fafa
 PKG_LICENSE:=MIT
@@ -22,6 +23,7 @@ define Package/aaa_modules/description
 endef
 
 define Build/Compile
+	# Nothing to compile
 endef
 
 define Package/aaa_modules/install
@@ -30,3 +32,4 @@ define Package/aaa_modules/install
 endef
 
 $(eval $(call BuildPackage,aaa_modules))
+EOF
