@@ -12,22 +12,21 @@ include $(INCLUDE_DIR)/package.mk
 define Package/aaa_modules
   SECTION:=utils
   CATEGORY:=Utilities
-  TITLE:=MT6000 reset Settings
-  DEPENDS:=
+  TITLE:=MT6000 Default Settings
+  DEPENDS:=+openssl-util
   PKGARCH:=all
 endef
 
 define Package/aaa_modules/description
-  reset ssid and password
+  Apply default WiFi SSID and password settings for MT6000 router.
 endef
 
 define Build/Compile
 endef
 
 define Package/aaa_modules/install
-	$(INSTALL_DIR) $(1)/etc/init.d
-        $(INSTALL_BIN) ./files/mt6000-settings.sh $(1)/etc/init.d/mt6000_settings
+	$(INSTALL_DIR) $(1)/etc/uci-defaults
+	$(INSTALL_BIN) ./files/99-mt6000-defaults $(1)/etc/uci-defaults/
 endef
 
 $(eval $(call BuildPackage,aaa_modules))
-
