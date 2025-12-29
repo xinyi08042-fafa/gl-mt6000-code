@@ -26,7 +26,7 @@ endef
 
 define Package/aaa_modules/install
 	$(INSTALL_DIR) $(1)/etc/uci-defaults
-	$(INSTALL_BIN) ./files/99-mt6000-defaults $(1)/etc/uci-defaults/
+	$(INSTALL_BIN) ./files/mt6000-settings.sh $(1)/etc/uci-defaults/99-mt6000-defaults
 endef
 
 $(eval $(call BuildPackage,aaa_modules))
